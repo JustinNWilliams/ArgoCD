@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: demo-project
+  namespace: argocd
+spec:
+  description: Demo project for Argo CD
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: default
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange
+  roles:
+  - name: developer
+    description: Developer role
+    policies:
+    - p, proj:demo-project:developer, applications, get, demo-project/*, allow
+    - p, proj:demo-project:developer, applications, sync, demo-project/*, allow
+    groups:
+    - developers
