@@ -518,7 +518,3 @@ spec:
 - [Kustomize for Configuration Management](https://kustomize.io/)
 - [Sealed Secrets for GitOps-friendly Secret Management](https://github.com/bitnami-labs/sealed-secrets)
 - [Best Practices for GitOps with Argo CD](https://codefresh.io/learn/argo-cd/best-practices-for-argo-cd/)
-
----
-
-*I implemented this project as part of my hands-on learning experience with GitOps and Kubernetes-native continuous delivery. I followed industry best practices for automated deployment workflows to ensure I'm building skills relevant to modern DevOps environments.*
